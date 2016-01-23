@@ -61,7 +61,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.bacon
+    camera.ef63s
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -196,20 +196,20 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.bacon \
-    init.bacon.rc \
+    fstab.ef63s \
+    init.ef63s.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    libinit_bacon \
-    ueventd.bacon.rc
+    libinit_ef63s \
+    ueventd.ef63s.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
 
 # Recovery
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(LOCAL_PATH)/bacon
+    $(LOCAL_PATH)/ef63s
 
 # Thermal config
 PRODUCT_COPY_FILES += \
@@ -236,11 +236,11 @@ PRODUCT_PACKAGES += \
     p2p_supplicant_overlay.conf
 
 # Call the proprietary setup
-$(call inherit-product-if-exists, vendor/oneplus/bacon/bacon-vendor.mk)
+$(call inherit-product-if-exists, vendor/pantech/ef63s/ef63s-vendor.mk)
 
 ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/prebuilt_HY11/target/product/msm8974/prebuilt.mk)
 endif
 
-# Inherit from oppo-common
-$(call inherit-product, device/oppo/common/common.mk)
+# Inherit from pantech-common
+$(call inherit-product, device/pantech/msm8974-common/common.mk)

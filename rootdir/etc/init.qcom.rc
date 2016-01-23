@@ -34,7 +34,7 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
 
 on fs
-    mount_all ./fstab.bacon
+    mount_all ./fstab.ef63s
     restorecon_recursive /persist
 
     mkdir /dev/usb-ffs 0770 shell shell
@@ -186,9 +186,6 @@ on post-fs-data
     # NFC: create data/nfc for nv storage
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
-
-    #Create OPPO NV item directory
-    mkdir /data/opponvitems 0771 radio radio
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system

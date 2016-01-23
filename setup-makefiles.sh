@@ -164,7 +164,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter bacon,\$(TARGET_DEVICE)),)
+ifneq (\$(filter ef63s,\$(TARGET_DEVICE)),)
 
 ifeq (\$(QCPATH),)
 

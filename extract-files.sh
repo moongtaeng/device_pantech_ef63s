@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #set -e
-export DEVICE=bacon
-export VENDOR=oneplus
+export DEVICE=ef63s
+export VENDOR=pantech
 
 if [ $# -eq 0 ]; then
   SRC=adb
