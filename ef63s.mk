@@ -196,13 +196,13 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.ef63s \
-    init.ef63s.rc \
+    fstab.qcom \
+    init.qcom.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    libinit_ef63s \
-    ueventd.ef63s.rc
+    libinit_qcom \
+    ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
