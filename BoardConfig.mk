@@ -199,4 +199,7 @@ TARGET_LDPRELOAD := libNimsWrap.so
 endif
 endif
 
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
+
 -include vendor/pantech/ef63s/BoardConfigVendor.mk
