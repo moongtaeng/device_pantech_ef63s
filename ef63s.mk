@@ -241,6 +241,3 @@ $(call inherit-product-if-exists, vendor/pantech/ef63s/ef63s-vendor.mk)
 ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/prebuilt_HY11/target/product/msm8974/prebuilt.mk)
 endif
-
-# Inherit from pantech-common
-$(call inherit-product, device/pantech/msm8974-common/common.mk)

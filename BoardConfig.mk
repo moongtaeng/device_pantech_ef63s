@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# inherit from Oppo common
--include device/pantech/msm8974-common/BoardConfigCommon.mk
-
 PLATFORM_PATH := device/pantech/ef63s
 
 # Include path
