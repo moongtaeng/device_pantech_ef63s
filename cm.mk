@@ -27,7 +27,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_NAME := cm_ef63s
 PRODUCT_DEVICE := ef63s
 PRODUCT_MANUFACTURER := PANTECH
-PRODUCT_MODEL := ef63s
+PRODUCT_MODEL := IM-A910S
 
 PRODUCT_GMS_CLIENTID_BASE := android-ef63s
 
