@@ -199,4 +199,7 @@ endif
 # QCOM Power
 TARGET_POWERHAL_VARIANT := qcom
 
+#Ril
+BOARD_RIL_CLASS := ../../../device/pantech/ef63s/ril/
+
 -include vendor/pantech/ef63s/BoardConfigVendor.mk
