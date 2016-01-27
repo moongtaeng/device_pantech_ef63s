@@ -209,8 +209,6 @@ PRODUCT_PACKAGES += \
     init.qcom.bt.sh
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/etc/init.pantech.ps.wifi.rc:root/init.pantech.ps.wifi.rc \
-	$(LOCAL_PATH)/rootdir/etc/init.pantech.preload.sh:root/init.pantech.preload.sh \
 	$(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:root/init.qcom.post_boot.sh \
 	$(LOCAL_PATH)/rootdir/etc/init.target.rc:root/init.target.rc 
 
