@@ -41,9 +41,9 @@ mm.enable.smoothstreaming=true
 media.aac_51_output_enabled=true
 
 # Network
-persist.data.netmgrd.qos.enable=true
-persist.data.tcpackprio.enable=true
-ro.data.large_tcp_window_size=true
+persist.data.netmgrd.qos.enable=false
+#persist.data.tcpackprio.enable=true
+#ro.data.large_tcp_window_size=true
 
 # Perf
 ro.qualcomm.perf.cores_online=2
