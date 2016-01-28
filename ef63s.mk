@@ -242,7 +242,8 @@ PRODUCT_PACKAGES += \
     hostapd.deny \
     wpa_supplicant.conf \
     wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf
+    p2p_supplicant_overlay.conf \
+    conn_init
 
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/pantech/ef63s/ef63s-vendor.mk)

@@ -101,8 +101,8 @@ endif
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Flags for modem (we still have an old modem)
-COMMON_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
-COMMON_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
+#COMMON_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
+#COMMON_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
 
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -168,19 +168,16 @@ BOARD_SEPOLICY_DIRS += \
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
-BOARD_HAS_QCOM_WLAN_SDK          := true
 BOARD_WLAN_DEVICE                := qcwcn
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
-TARGET_USES_WCNSS_CTRL           := true
-TARGET_USES_QCOM_WCNSS_QMI       := true
-TARGET_USES_WCNSS_MAC_ADDR_REV   := true
-TARGET_WCNSS_MAC_PREFIX          := e8bba8
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # Inherit from QC proprietary
 ifneq ($(QCPATH),)
