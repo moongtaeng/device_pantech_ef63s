@@ -140,7 +140,7 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/pantech/ef63s/init/init_ef63s.cpp
 
 # Keymaster
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
