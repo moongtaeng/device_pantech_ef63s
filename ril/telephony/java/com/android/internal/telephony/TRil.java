@@ -15,12 +15,15 @@
  */
 
 package com.android.internal.telephony;
+	
+import static com.android.internal.telephony.RILConstants.*;
 
 import android.os.Message;
 import android.content.Context;
 import android.os.SystemProperties;
 import android.telephony.Rlog;
 import android.os.SystemService;
+import android.os.Parcel;
 
 public class TRil extends RIL {
     private Message mPendingGetSimStatus;
@@ -36,6 +39,26 @@ public class TRil extends RIL {
         mQANElements = SystemProperties.getInt("ro.ril.telephony.mqanelements", 0x4);
     }
     
+    @Override
+    protected Object
+    responseFailCause(Parcel p) {
+        int numInts;
+        int response[];
+
+        numInts = p.readInt();
+        response = new int[numInts];
+        for (int i = 0 ; i < numInts ; i++) {
+            response[i] = p.readInt();
+        }
+        LastCallFailCause failCause = new LastCallFailCause();
+        failCause.causeCode = response[0];
+        if (p.dataAvail() > 0) {
+          failCause.vendorCause = p.readString();
+        }
+        return failCause;
+        
+    }
+        
     private static void shSleep(int value) {
         try {
             Thread.sleep((long)value);
