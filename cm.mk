@@ -37,8 +37,8 @@ TARGET_VENDOR_PRODUCT_NAME := ef63s
 TARGET_VENDOR_DEVICE_NAME := ef63s
 
 ## Use the latest approved GMS identifiers unless running a signed build
-ifneq ($(SIGN_BUILD),true)
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=pantech/ef63s:5.1.1/LMY48B/YOG4PAS1N0:user/release-keys \
-    PRIVATE_BUILD_DESC="ef63s-user 5.1.1 LMY48B YOG4PAS1N0 release-keys"
-endif
+# ifneq ($(SIGN_BUILD),true)
+# PRODUCT_BUILD_PROP_OVERRIDES += \
+#    BUILD_FINGERPRINT=pantech/ef63s:5.1.1/LMY48B/YOG4PAS1N0:user/release-keys \
+#    PRIVATE_BUILD_DESC="ef63s-user 5.1.1 LMY48B YOG4PAS1N0 release-keys"
+# endif
