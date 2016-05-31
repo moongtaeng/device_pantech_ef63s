@@ -192,4 +192,6 @@ TARGET_POWERHAL_VARIANT := qcom
 #Ril
 BOARD_RIL_CLASS := ../../../device/pantech/ef63s/ril/
 
+EXPERIMENTAL_USE_JAVA8	:=true
+
 -include vendor/pantech/ef63s/BoardConfigVendor.mk
