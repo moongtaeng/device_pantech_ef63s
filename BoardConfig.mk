@@ -54,9 +54,9 @@ TARGET_KERNEL_SOURCE := kernel/pantech/msm8x74
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Enable DIAG on debug builds
-ifneq ($(TARGET_BUILD_VARIANT),user)
-TARGET_KERNEL_ADDITIONAL_CONFIG ?= cyanogenmod_debug_config
-endif
+# ifneq ($(TARGET_BUILD_VARIANT),user)
+# TARGET_KERNEL_ADDITIONAL_CONFIG ?= cyanogenmod_debug_config
+# endif
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -150,43 +150,36 @@ TARGET_USES_QCOM_BSP := true
 TARGET_RIL_VARIANT := caf
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-BOARD_HAS_NO_SELECT_BUTTON := true
-RECOVERY_FSTAB_VERSION 				:= 2
-TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
-BOARD_HAS_NO_SELECT_BUTTON 		:= true
-BOARD_SUPPRESS_EMMC_WIPE 		:= true
-BOARD_HAS_LARGE_FILESYSTEM 		:= true
-TARGET_USERIMAGES_USE_EXT4 		:= true
-BOARD_RECOVERY_ALWAYS_WIPES 		:= true
-BOARD_RECOVERY_SWIPE			:= true
-# BOARD_RECOVERY_HANDLES_MOUNT 		:= true
-BOARD_USES_MMCUTILS 			:= true
-# BOARD_TOUCH_RECOVERY 			:= true
-BOARD_USE_CUSTOM_RECOVERY_FONT 		:= \"roboto_23x41.h\"
-RECOVERY_LCD_BACKLIGHT_PATH		:= /sys/class/leds/lcd-backlight/brightness
+TARGET_RECOVERY_FSTAB := device/pantech/ef63s/rootdir/etc/fstab.qcom
+TARGET_USERIMAGES_USE_EXT4 := true
 
 ####################################################
 ###           TWRP Recovery Edition              ###
 ####################################################
 DEVICE_RESOLUTION 		:= 1080x1920
 TW_THEME 			:= portrait_hdpi
-TW_THEME_LANDSCAPE 		:= landscape_hdpi
-TW_TARGET_USES_QCOM_BSP		:= true
+TW_DEFAULT_EXTERNAL_STORAGE	:= true
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_RECOVERY_PIXEL_FORMAT 	:= "RGBX_8888"
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NO_USB_STORAGE 		:= true
-TW_INCLUDE_CRYPTO 		:= true
+TW_TARGET_USES_QCOM_BSP		:= true
+BOARD_HAS_LARGE_FILESYSTEM 	:= true
+TW_NO_USB_STORAGE		:= true
+TW_CRYPTO_FS_TYPE		:= "ext4"
+TARGET_RECOVERY_QCOM_RTC_FIX 	:= true
 BOARD_SUPPRESS_SECURE_ERASE 	:= true
-RECOVERY_SDCARD_ON_DATA 	:= true
-BOARD_HAS_NO_REAL_SDCARD 	:= true
-TARGET_USERIMAGES_USE_F2FS 	:= true
-TARGET_HW_DISK_ENCRYPTION 	:= true
+BOARD_SUPPRESS_EMMC_WIPE	:= true
+RECOVERY_SDCARD_ON_DATA		:= true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_EXTRA_LANGUAGES 		:= true
+TW_DEFAULT_EXTERNAL_STORAGE 	:= true
+TW_INCLUDE_JB_CRYPTO 		:= true
+TW_INCLUDE_CRYPTO 		:= true
 TW_BRIGHTNESS_PATH 		:= "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS 		:= 255
-TW_NO_SCREEN_BLANK 		:= true
-TW_SCREEN_BLANK_ON_BOOT		:= true
-TW_NO_SCREEN_TIMEOUT 		:= true
+TW_DEFAULT_BRIGHTNESS 		:= 175
+TARGET_USES_LOGD 		:= true
+TW_SCREEN_BLANK_ON_BOOT 	:= true
+TW_EXCLUDE_SUPERSU 		:= true
 TW_TIME_ZONE_GUISEL		:= "THAIST-7;THAIDT"
 RECOVERY_VARIANT		:= twrp
 
@@ -196,17 +189,18 @@ RECOVERY_VARIANT		:= twrp
 TARGET_RECOVERY_IS_MULTIROM := true
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/pantech/ef63s/multirom/mr_init_devices.c
-# MR_RD_ADDR := 0x2200000
 MR_DPI := xhdpi
 MR_DPI_MUL := 1.5
-MR_FSTAB := device/pantech/ef63s/rootdir/etc/twrp.fstab
+MR_FSTAB := device/pantech/ef63s/ramdisk/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x20000000
 MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
 MR_DPI_FONT := 340
+MR_DEFAULT_BRIGHTNESS := 80
+MR_ENCRYPTION := false
+
 # MR_CONTINUOUS_FB_UPDATE := true
 MR_PIXEL_FORMAT := "RGBX_8888"
-MR_ENCRYPTION := false
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/pantech/ef63s/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
@@ -214,8 +208,8 @@ MR_DEVICE_VARIANTS := ef63l ef63k A910S A910L A910K
 
 #MultiRom Hooks, So that we can run stock roms as secondary
 MR_DEVICE_HOOKS := device/pantech/ef63s/multirom/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 3
-MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_DEVICE_HOOKS_VER := 4
+
 
 # RPC
 TARGET_NO_RPC := true
