@@ -22,7 +22,6 @@ ro.gps.agps_provider=1
 
 # Media
 af.fast_track_multiplier=1
-
 audio.deep_buffer.media=true
 audio_hal.period_size=192
 persist.audio.fluence.voicecall=true
@@ -41,9 +40,9 @@ mm.enable.smoothstreaming=true
 media.aac_51_output_enabled=true
 
 # Network
-persist.data.netmgrd.qos.enable=false
-#persist.data.tcpackprio.enable=true
-#ro.data.large_tcp_window_size=true
+persist.data.netmgrd.qos.enable=true
+persist.data.tcpackprio.enable=true
+ro.data.large_tcp_window_size=true
 
 # Perf
 ro.qualcomm.perf.cores_online=2
@@ -53,7 +52,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 persist.radio.add_power_save=1
 persist.radio.apm_sim_not_pwdn=1
-ro.telephony.ril_class=TRil
 ro.telephony.call_ring.multiple=0
 ro.telephony.default_network=9
 
