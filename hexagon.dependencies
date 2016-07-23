@@ -1,0 +1,13 @@
+
+[
+{
+"repository": "chautruongthinh/android_kernel_pantech_msm8x74",
+"target_path": "kernel/pantech/msm8x74",
+"branch": "tekcafe_6.x"
+},
+{
+"repository": "chautruongthinh/android_vendor_pantech_ef63s",
+"target_path": "vendor/pantech/ef63s",
+"branch": "cm-13.0_new"
+},
+]
