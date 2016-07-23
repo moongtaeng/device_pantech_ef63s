@@ -8,6 +8,6 @@
 {
 "repository": "chautruongthinh/android_vendor_pantech_ef63s",
 "target_path": "vendor/pantech/ef63s",
-"branch": "cm-13.0_new"
+"branch": "cm-13_new"
 },
 ]
